@@ -22,7 +22,7 @@ def count_words(abst):
 
 if __name__ == '__main__':
     print('Program Started!')
-    filename = "covid_abstracts.csv"
+    filename = "covid_abstracts_test.csv"
     chunksize = 1000
     
     # Number of cpus
@@ -80,6 +80,9 @@ if __name__ == '__main__':
         plot_time.append(running_period)
         
         print(f"CPUs used: {cpu} with {running_period} seconds")
+
+    print("Unique words: " + str(len_unique))
+    print("Top10: " + str(top10))
         
     plt.plot(plot_cpus, plot_time)
     plt.title("Running Time vs Number of CPUs")

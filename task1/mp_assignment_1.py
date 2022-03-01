@@ -9,6 +9,9 @@ import multiprocessing as mp
 import collections
 import time
 import matplotlib.pyplot as plt
+import random
+
+random.seed(0)
 
 # Please, calculate how many words are unique and count each word in the data set.
 # The separation of the word in a sentence should be done by a space character.
@@ -86,7 +89,7 @@ if __name__ == '__main__':
         
     plt.plot(plot_cpus, plot_time)
     plt.title("Running Time vs Number of CPUs")
-    plt.xlabel("Time (s)")
-    plt.ylabel("CPUs")
+    plt.ylabel("Time (s)")
+    plt.xlabel("CPUs")
     plt.savefig("plot.png")
     plt.show()

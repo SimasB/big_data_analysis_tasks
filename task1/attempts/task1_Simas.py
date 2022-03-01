@@ -8,6 +8,9 @@ import pandas as pd
 import numpy as np
 import multiprocessing as mp
 import collections
+import random
+
+random.seed(0)
 
 # Please, calculate how many words are unique and count each word in the data set.
 # The separation of the word in a sentence should be done by a space character.

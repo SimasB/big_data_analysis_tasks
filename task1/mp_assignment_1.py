@@ -22,7 +22,7 @@ def count_words(abst):
 
 if __name__ == '__main__':
     print('Program Started!')
-    filename = "C:/Users/gfmm2/Desktop/Erasmus/Cadeiras/Big Data Analysis/Practical/Parallel Programming/data/covid_abstracts.csv"
+    filename = "covid_abstracts.csv"
     chunksize = 1000
     
     # Number of cpus

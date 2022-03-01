@@ -18,18 +18,7 @@ def count_words(abst):
     abst = abst.lower() # lowercasing all
     words = abst.split(" ") # spliting all
     counter = collections.Counter(words)
-
     return counter
-
-# def count_words(abst):
-#     abst = abst.lower() # lowercasing all
-#     for i in range(2, 10):
-#         spaces = " "*i
-#         abst = abst.replace(spaces, " ")
-#     words = abst.split(" ") # spliting all
-#     counter = collections.Counter(words) # dictionary of all words counted
-#     return counter
-
 
 if __name__ == '__main__':
     print('Program Started!')
@@ -58,7 +47,6 @@ if __name__ == '__main__':
         c = 1
         # Process each chunk individualy. It can be processes in parallel as well.
         for chunk_df in iter_csv:
-            #print(f"Chunk being processed {c}, data index read: {c * chunksize}")
             c += 1
             
             # concatenating all abtstracts in the chunck
@@ -76,12 +64,7 @@ if __name__ == '__main__':
                     count_all_words[word] += results[word]
                 else:
                     count_all_words[word] = results[word]
-            
-            # Limiting number of chunks for debuging
-            # if c >= 2:
-            #     break
-    
-        
+
         len_unique = len(count_all_words.keys())
         sorted_counter = {k: v for k, v in sorted(count_all_words.items(), key=lambda item: item[1], reverse = True) if k != ""}        
         top10 = {}
@@ -97,8 +80,6 @@ if __name__ == '__main__':
         plot_time.append(running_period)
         
         print(f"CPUs used: {cpu} with {running_period} seconds")
-        #print("Unique words: "+str(len_unique))
-        #print("Top10: "+str(top10))
         
     plt.plot(plot_cpus, plot_time)
     plt.title("Running Time vs Number of CPUs")
